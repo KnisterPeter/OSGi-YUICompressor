@@ -8,7 +8,7 @@
   </parent>
   <groupId>de.matrixweb.osgi.wrapped</groupId>
   <artifactId>osgi-wrapped-yuicompressor</artifactId>
-  <version>1.1.2.4.7-SNAPSHOT</version>
+  <version>1.0.0.247-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <name>OSGi Bundle YUICompressor</name>
@@ -42,6 +42,12 @@
       <version>2.4.7</version>
       <optional>true</optional>
     </dependency>
+    <dependency>
+      <groupId>org.mozilla</groupId>
+      <artifactId>rhino</artifactId>
+      <version>1.7R4</version>
+      <optional>true</optional>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -66,7 +72,7 @@
               org.apache.xmlbeans.*;resolution:=optional,
               *
             </Import-Package>
-            <Embed-Dependency>*;scope=compile|runtime;inline=true</Embed-Dependency>
+            <Embed-Dependency>*;scope=compile|runtime;optional=true;inline=true</Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>
           </instructions>
         </configuration>
